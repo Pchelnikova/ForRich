@@ -68,6 +68,8 @@ namespace ForRich.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+
+       
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -75,7 +77,7 @@ namespace ForRich.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Login, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.First_Name, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,7 +153,7 @@ namespace ForRich.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = model.Login, Email = model.Email };
+                var user = new AppUser { UserName = model.First_Name, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

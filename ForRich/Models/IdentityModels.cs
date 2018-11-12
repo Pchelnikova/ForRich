@@ -10,7 +10,8 @@ namespace ForRich.Models
     public class AppUser : IdentityUser
     {
         public int Age { get; set; }
-        public int MyProperty { get; set; }
+        public int Family { get; set; }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
@@ -19,8 +20,6 @@ namespace ForRich.Models
             // Add custom user claims here
             return userIdentity;
         }
-
-
     }
 
     public class AppDbContext : IdentityDbContext<AppUser>
