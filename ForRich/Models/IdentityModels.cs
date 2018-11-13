@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using ForRich.Models.DBModels;
+using ForRich.Models.DBModels.Types_of_Budjet;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -27,11 +29,19 @@ namespace ForRich.Models
         public AppDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer<AppDbContext>(new MyInitializer<AppDbContext>());
         }
 
         public static AppDbContext Create()
         {
             return new AppDbContext();
-        }
+        }       
+        public virtual DbSet<Wish> Wish_Lists { get; set; }
+        public virtual DbSet<Profit> Profits { get; set; }
+        public virtual DbSet<Expence> Expences { get; set; }
+        public virtual DbSet<Plan> Plans { get; set; }
+        public virtual DbSet<Profit_Type> Profit_Types { get; set; }
+        public virtual DbSet<Expence_Type> Expances_Types { get; set; }
+        public virtual DbSet<Event_Type> Event_Types { get; set; }             
     }
 }

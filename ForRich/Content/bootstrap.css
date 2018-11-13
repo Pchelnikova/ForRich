@@ -2506,7 +2506,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff ;
-    background-color: olivedrab;
+    background-color: darkolivegreen;
     border-color: saddlebrown;
 }
 
@@ -6319,7 +6319,7 @@ button.bg-success:focus {
 }
 
 .bg-info {
-    background-color: darkcyan !important;
+    background-color: firebrick !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,
