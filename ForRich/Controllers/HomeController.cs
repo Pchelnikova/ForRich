@@ -26,5 +26,22 @@ namespace ForRich.Controllers
 
             return View();
         }
+
+        public ActionResult Profits()
+        {
+            return View();
+        }
+        public ActionResult Expences()
+        {
+            return View();
+        }
+        public ActionResult Plan_List()
+        {
+            return View();
+        }
+        public ActionResult Wish_List()
+        {
+            return View();
+        }
     }
 }
