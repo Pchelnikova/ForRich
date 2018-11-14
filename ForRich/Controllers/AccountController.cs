@@ -51,7 +51,7 @@ namespace ForRich.Controllers
                 _userManager = value;
             }
         }
-
+       
         //
         // GET: /Account/Login
         [AllowAnonymous]

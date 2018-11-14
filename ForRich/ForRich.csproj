@@ -282,7 +282,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -331,6 +333,8 @@
     <Content Include="Views\Home\Wish_List.cshtml" />
     <Content Include="Views\Home\_AllProfits.cshtml" />
     <Content Include="Views\Shared\_CreateNewGroup.cshtml" />
+    <Content Include="Views\Shared\_Surname.cshtml" />
+    <Content Include="Views\Shared\_EmailsForGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

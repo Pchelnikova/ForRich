@@ -1,4 +1,4 @@
-﻿@model List <string>
+﻿@model ForRich.Models.AppDbContext
 @{
     ViewBag.Title = "Home Page";
 }
@@ -17,28 +17,16 @@
             @Html.ActionLink("PLAN LIST ", "Plan_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("WISH LIST ", "Wish_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             <br /><br /><br /><br />
+            <div id="create_group">
+                <h4>Do you want create new group? (Family, Company itc) </h4>
+                @using (Ajax.BeginForm("_Surname", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "create_group", HttpMethod = "POST" }))
+                {
+                    <button class="btn btn-lg" >YES</button>
+                }
+            </div>
 
-            <h4>Do you want create new group? (Family, Company itc) </h4>
-            <h3>How many members in your group (family)?</h3>
 
-            <input type="text" id="member">
-            <input value="OK" onclick="members()" type="button" id="mem">
-            <hr />
-            <form id="email"></form>
-            <script>
-                function members() {
-                    $("#email").append('<label>Input email for invite members of your group<br/>');
-                    for (i = 0; i < $("#member").val(); i++) {
-                        $("#email").append('<br/><input name="email'+i+'"><br/>');
-                    }
-                    $("#email").append('<br/>');
-                }                
-            </script>
-
-            @using (Ajax.BeginForm("_CreateNewGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
-            {
-                <button class="btn btn-lg" background-color="yellow">CREATE NEW GROUP!</button>
-            }
+          
         </div>
     </div>
 </div>
