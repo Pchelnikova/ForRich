@@ -43,5 +43,11 @@ namespace ForRich.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult _CreateOrdinaryUser ()
+        {
+            return PartialView();
+        }
     }
 }
