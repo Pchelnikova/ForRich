@@ -1,5 +1,7 @@
 ﻿using ForRich.Models.DBModels;
 using ForRich.Models.DBModels.Types_of_Budjet;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -9,6 +11,13 @@ namespace ForRich.Models
     {
         protected override void Seed(AppDbContext context)
         {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var role1 = new IdentityRole { Name = "superadmin" };
+            var role2 = new IdentityRole { Name = "admin" };
+            var role3 = new IdentityRole { Name = "user" };
+            roleManager.Create(role1);
+            roleManager.Create(role2);
+            roleManager.Create(role3);
             #region
             Event_Type Event_Task = new Event_Type()
             {

@@ -65,13 +65,9 @@ namespace ForRich.Controllers
             return PartialView();
         }
 
-        //[HttpPost]
-        //public ActionResult _Surname(string surname)
-        //{
-        //    AppDbContext ctx = new AppDbContext();
-        //    ctx.Family.Add(new Models.DBModels.Family() { Name = surname });
-        //    ctx.SaveChanges();
-        //    return PartialView("_EmailsForGroup");
-        //}
+        public ActionResult AfterRegistration ()
+        {
+            return View();
+        }
     }
 }

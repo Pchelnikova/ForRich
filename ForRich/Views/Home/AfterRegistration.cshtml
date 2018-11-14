@@ -1,4 +1,5 @@
-﻿@model ForRich.Models.AppDbContext
+﻿
+@model ForRich.Models.AppDbContext
 @{
     ViewBag.Title = "Home Page";
 }
@@ -16,6 +17,16 @@
             @Html.ActionLink("EXPENCES ", "Expences", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("PLAN LIST ", "Plan_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("WISH LIST ", "Wish_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+            <br /><br /><br /><br />
+            <div id="create_group">
+                <h4>Do you want create new group? (Family, Company itc) </h4>
+                @using (Ajax.BeginForm("_Surname", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "create_group", HttpMethod = "POST" }))
+                {
+                    <button class="btn btn-lg">YES</button>
+                }
+
+            </div> <br />
+            @Html.ActionLink("NO", "Index")
         </div>
     </div>
 </div>
@@ -24,7 +35,7 @@
     <div class="col-md-3">
         <h2>PROFITS</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            Profits gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
             for enjoyable, agile development.
         </p>
@@ -32,7 +43,7 @@
     </div>
     <div class="col-md-3">
         <h2>EXPENCES</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p>Expence is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-3">

@@ -335,6 +335,7 @@
     <Content Include="Views\Shared\_CreateNewGroup.cshtml" />
     <Content Include="Views\Shared\_Surname.cshtml" />
     <Content Include="Views\Shared\_EmailsForGroup.cshtml" />
+    <Content Include="Views\Home\AfterRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

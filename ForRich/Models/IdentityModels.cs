@@ -23,7 +23,7 @@ namespace ForRich.Models
             return userIdentity;
         }
     }
-
+    
     public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext()

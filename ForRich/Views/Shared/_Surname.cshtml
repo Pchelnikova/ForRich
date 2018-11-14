@@ -1,7 +1,7 @@
 ﻿
 
 <h3>Input Name for your group or Surname for family:</h3>
-<input type="text" id="surname" />
+<input type="text" name="surname" />
 <hr />
 @using (Ajax.BeginForm("_EmailsForGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "create_group", HttpMethod = "POST" }))
 {
