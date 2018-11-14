@@ -1,13 +1,46 @@
 ﻿
 @{
-    ViewBag.Title = "Profits";
+
+                ViewBag.Title = "Profits";
+                var options = new AjaxOptions()
+                {
+                    UpdateTargetId = "tabledata",
+                    Url = Url.Action("OrdersData")
+                };
+}
 }
 
-<h2>Profits</h2>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">PROFITS</h4>
+    <p></p>
+    <hr>
+
+</div>
 <div class="row">
-    <div class="col-md-3">
+    <br />
+    <br />
+
+    <div class="col-md-3 col-md-offset-1">
         @Html.ActionLink("ADD ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("DELETE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("UPDATE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("SHOW ALL ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br />
+        <br />
     </div>
+    @*<div class="col-md-8">
+        @Html.Partial("")
+    </div>*@
 
 </div>
 

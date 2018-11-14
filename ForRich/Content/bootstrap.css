@@ -2508,6 +2508,7 @@ fieldset:disabled a.btn {
     color: #fff ;
     background-color: darkolivegreen;
     border-color: saddlebrown;
+    width: 200px;
 }
 
     .btn-primary:hover {
@@ -5235,7 +5236,7 @@ input[type="button"].btn-block {
 
 .alert-dark {
     color: #1b1e21;
-    background-color: #d6d8d9;
+    background-color: violet;
     border-color: #c6c8ca;
 }
 
@@ -6319,7 +6320,7 @@ button.bg-success:focus {
 }
 
 .bg-info {
-    background-color: firebrick !important;
+    background-color: saddlebrown !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,

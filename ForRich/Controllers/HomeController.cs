@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForRich.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,5 +44,15 @@ namespace ForRich.Controllers
         {
             return View();
         }
+        //public ActionResult OrdersData(string id)
+        //{
+        //    AppDbContext ctx = new AppDbContext();
+        //    var data = ctx.Profits;
+        //    if (!string.IsNullOrEmpty(id) && id != "All")
+        //    {
+        //        data = data.Where(e => e.Profit_Type.Name==id)
+        //    }
+        //    return PartialView(data);
+        //}
     }
 }
