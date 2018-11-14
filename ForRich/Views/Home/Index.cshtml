@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List <string>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -15,39 +16,30 @@
             @Html.ActionLink("EXPENCES ", "Expences", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("PLAN LIST ", "Plan_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("WISH LIST ", "Wish_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
-            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br />
 
             <h4>Do you want create new group? (Family, Company itc) </h4>
-            <h4>How many members in your group (family)?</h4>
-            
-            @Html.TextBox("memberGroup", null, new {id="member" }) 
-            <button 
-               <hr />
+            <h3>How many members in your group (family)?</h3>
 
-            @for(int i = 0; i< )
-               @using (Ajax.BeginForm("_CreateNewGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
-               {
-                   <button class="btn btn-lg" background-color="yellow">CREATE NEW GROUP!</button>
-               }
+            <input type="text" id="member">
+            <input value="OK" onclick="members()" type="button" id="mem">
+            <hr />
+            <form id="email"></form>
+            <script>
+                function members() {
+                    $("#email").append('<label>Input email for invite members of your group<br/>');
+                    for (i = 0; i < $("#member").val(); i++) {
+                        $("#email").append('<br/><input name="email'+i+'"><br/>');
+                    }
+                    $("#email").append('<br/>');
+                }                
+            </script>
 
-            @*<div class="col-md-5">
-            @using (Ajax.BeginForm("Login", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
+            @using (Ajax.BeginForm("_CreateNewGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
             {
-                <button class="btn btn-lg">Ordinary</button>
+                <button class="btn btn-lg" background-color="yellow">CREATE NEW GROUP!</button>
             }
         </div>
-        <div class="col-md-5">
-            @using (Ajax.BeginForm("_CreateOrdinaryUser", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
-            {
-                <button class="btn btn-lg">NEW FAMILY!</button>
-            }
-        </div>*@
-
-        </div>
-</div>
-<div class="body">
-    <div class="row">
-        <p id="CreateNewGroup"></p>
     </div>
 </div>
 <br />
@@ -76,4 +68,5 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+
 </div>
