@@ -2,27 +2,26 @@
 @{
 
                 ViewBag.Title = "Profits";
-                var options = new AjaxOptions()
-                {
-                    UpdateTargetId = "tabledata",
-                    Url = Url.Action("OrdersData")
-                };
+              
 }
+
 
 
 <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">PROFITS</h4>
     <p></p>
     <hr>
-
 </div>
 <div class="row">
     <br />
     <br />
 
     <div class="col-md-3 col-md-offset-1">
-        @Html.ActionLink("ADD ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
 
+        @using (Ajax.BeginForm("ProfitsAdd", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-lg">SHOW ALL</button>
+        }
         <br /><br /><br />
 
         @Html.ActionLink("DELETE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
@@ -38,9 +37,9 @@
         <br />
         <br />
     </div>
-    @*<div class="col-md-8">
-        @Html.Partial("")
-    </div>*@
+    <div class="col-md-8" id="tabledate">
+       
+    </div>
 
 </div>
 

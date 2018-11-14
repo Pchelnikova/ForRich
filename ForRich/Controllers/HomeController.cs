@@ -32,6 +32,10 @@ namespace ForRich.Controllers
         {
             return View();
         }
+        public ActionResult ProfitsAdd()
+        {
+            return PartialView("_Budjet");
+        }
         public ActionResult Expences()
         {
             return View();
@@ -69,5 +73,7 @@ namespace ForRich.Controllers
         {
             return View();
         }
+
+       
     }
 }

@@ -16,7 +16,7 @@ namespace ForRich
 
         protected void Application_Start()
         {
-            //Database.SetInitializer<AppDbContext>(new  MyInitializer<T>());
+            Database.SetInitializer<AppDbContext>(new  MyInitializer<AppDbContext>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

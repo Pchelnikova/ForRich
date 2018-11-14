@@ -18,15 +18,16 @@
             @Html.ActionLink("PLAN LIST ", "Plan_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             @Html.ActionLink("WISH LIST ", "Wish_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
             <br /><br /><br /><br />
-            <div id="create_group">
-                <h4>Do you want create new group? (Family, Company itc) </h4>
-                @using (Ajax.BeginForm("_Surname", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "create_group", HttpMethod = "POST" }))
-                {
-                    <button class="btn btn-lg">YES</button>
-                }
+                              <div id="create_group">
+                                  <h4>Do you want create new group? (Family, Company itc) </h4>
+                                  @using (Ajax.BeginForm("_Surname", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "create_group", HttpMethod = "POST" }))
+                                  {
+                                      <button class="btn btn-lg">YES</button>
+                                  }
+                                  <br />
+                                  @Html.ActionLink("NO", "Index")
 
-            </div> <br />
-            @Html.ActionLink("NO", "Index")
+                              </div>
         </div>
     </div>
 </div>

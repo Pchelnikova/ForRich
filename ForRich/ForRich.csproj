@@ -336,6 +336,7 @@
     <Content Include="Views\Shared\_Surname.cshtml" />
     <Content Include="Views\Shared\_EmailsForGroup.cshtml" />
     <Content Include="Views\Home\AfterRegistration.cshtml" />
+    <Content Include="Views\Shared\_Budjet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
