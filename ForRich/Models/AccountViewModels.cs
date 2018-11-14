@@ -50,8 +50,8 @@ namespace ForRich.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Login")]
-        public string First_Name { get; set; }
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,7 +64,7 @@ namespace ForRich.Models
 
     public class RegisterViewModel
     {
-        //[Required]
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

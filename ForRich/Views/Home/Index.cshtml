@@ -5,44 +5,49 @@
 <div class="jumbotron">
     <h1>For RICH</h1>
     <p class="lead">Make your own rich!</p>
-    <p id="CreateOrdinaryUser">       
-    </p>
-</div>
 
+    <div class="row">
+        <div class="col-md-2">
+            <img src="Content/money.jpg" width="150" />
+        </div>
+        <div class="col-md-10">
+            @Html.ActionLink("PROFITS ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+            @Html.ActionLink("EXPENCES ", "Expences", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+            @Html.ActionLink("PLAN LIST ", "Plan_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+            @Html.ActionLink("WISH LIST ", "Wish_List", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+            <br /><br /><br /><br /><br /><br />
+
+            <h4>Do you want create new group? (Family, Company itc) </h4>
+            <h4>How many members in your group (family)?</h4>
+            
+            @Html.TextBox("memberGroup", null, new {id="member" }) 
+            <button 
+               <hr />
+
+            @for(int i = 0; i< )
+               @using (Ajax.BeginForm("_CreateNewGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
+               {
+                   <button class="btn btn-lg" background-color="yellow">CREATE NEW GROUP!</button>
+               }
+
+            @*<div class="col-md-5">
+            @using (Ajax.BeginForm("Login", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
+            {
+                <button class="btn btn-lg">Ordinary</button>
+            }
+        </div>
+        <div class="col-md-5">
+            @using (Ajax.BeginForm("_CreateOrdinaryUser", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
+            {
+                <button class="btn btn-lg">NEW FAMILY!</button>
+            }
+        </div>*@
+
+        </div>
+</div>
 <div class="body">
     <div class="row">
-        <div class="col-md-4">
-            <img src="Content/money.jpg" width="300" height="300" />
-        </div>
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-lg-1">
-                    @Ajax.ActionLink("Ordinary User", "_CreateOrdinaryUser", "Home",null,
-                   new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" },
-                   new {@class= "btn btn-lg" })
-
-                </div>
-                <div class="col-lg-3"></div>
-                <div class="col-md-6" id="login_div">
-                </div>
-            </div>
-
-            <div class="row">
-                <label></label>
-            </div>
-            <div class="row">
-                <label></label>
-            </div>
-            <div class="row">
-                <div class="col-md-1">
-                    @using (Ajax.BeginForm("CreateFamily", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "login_div", HttpMethod = "POST" }))
-                    {
-                        <button class="btn btn-lg">NEW FAMILY!</button>
-                    }
-                </div>
-            </div>
-
-        </div>
+        <p id="CreateNewGroup"></p>
     </div>
 </div>
 <br />

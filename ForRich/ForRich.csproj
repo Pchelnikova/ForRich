@@ -330,7 +330,7 @@
     <Content Include="Views\Home\Plan_List.cshtml" />
     <Content Include="Views\Home\Wish_List.cshtml" />
     <Content Include="Views\Home\_AllProfits.cshtml" />
-    <Content Include="Views\Shared\_CreateOrdinaryUser.cshtml" />
+    <Content Include="Views\Shared\_CreateNewGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

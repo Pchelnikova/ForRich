@@ -13,6 +13,7 @@ namespace ForRich.Models
     {
         public int Age { get; set; }    
         public virtual Family Family { get; set; }
+        public string Name { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {

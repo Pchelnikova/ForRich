@@ -46,7 +46,7 @@ namespace ForRich.Controllers
         }
 
         [HttpPost]
-        public ActionResult _CreateOrdinaryUser ()
+        public ActionResult _CreateNewGroup()
         {
             return PartialView();
         }
