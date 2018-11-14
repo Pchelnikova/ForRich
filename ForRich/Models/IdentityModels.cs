@@ -11,9 +11,8 @@ namespace ForRich.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class AppUser : IdentityUser
     {
-        public int Age { get; set; }
-        public int Family { get; set; }
-        
+        public int Age { get; set; }    
+        public virtual Family Family { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
@@ -37,6 +36,7 @@ namespace ForRich.Models
             return new AppDbContext();
         }       
         public virtual DbSet<Wish> Wish_Lists { get; set; }
+        public virtual DbSet<Family> Family { get; set; }
         public virtual DbSet<Profit> Profits { get; set; }
         public virtual DbSet<Expence> Expences { get; set; }
         public virtual DbSet<Plan> Plans { get; set; }

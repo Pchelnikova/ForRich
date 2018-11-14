@@ -212,6 +212,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DBModels\Abstr_Budjet_Unit.cs" />
     <Compile Include="Models\DBModels\Expence.cs" />
+    <Compile Include="Models\DBModels\Family.cs" />
     <Compile Include="Models\DBModels\Plan.cs" />
     <Compile Include="Models\DBModels\Profit.cs" />
     <Compile Include="Models\DBModels\Types_of_Budjet\Abstr_Type.cs" />
@@ -266,6 +267,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -327,6 +330,7 @@
     <Content Include="Views\Home\Plan_List.cshtml" />
     <Content Include="Views\Home\Wish_List.cshtml" />
     <Content Include="Views\Home\_AllProfits.cshtml" />
+    <Content Include="Views\Shared\_CreateOrdinaryUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

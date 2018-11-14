@@ -44,15 +44,11 @@ namespace ForRich.Controllers
         {
             return View();
         }
-        //public ActionResult OrdersData(string id)
-        //{
-        //    AppDbContext ctx = new AppDbContext();
-        //    var data = ctx.Profits;
-        //    if (!string.IsNullOrEmpty(id) && id != "All")
-        //    {
-        //        data = data.Where(e => e.Profit_Type.Name==id)
-        //    }
-        //    return PartialView(data);
-        //}
+
+        [HttpPost]
+        public ActionResult _CreateOrdinaryUser ()
+        {
+            return PartialView();
+        }
     }
 }
