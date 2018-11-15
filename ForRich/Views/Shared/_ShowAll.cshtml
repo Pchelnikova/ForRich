@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ForRich.Models.DBModels.Profit>
+@{
+    ViewBag.Title = "Budjet";
+}
+<h2>PROFITS</h2>
+
+<table class="table" cellpadding="4">
+    <thead  class="thead-dark">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Sum</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>   
+    @foreach (ForRich.Models.DBModels.Profit profit in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => profit.Date_)</td>
+            <td>@Html.DisplayFor(m => profit.Sum)</td>
+            <td>@Html.DisplayFor(m => profit.Profit_Type.Name)</td>
+            <td>@Html.DisplayFor(m => profit.Description)</td>
+        </tr>
+    }
+</table>
+

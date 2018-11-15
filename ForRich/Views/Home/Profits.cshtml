@@ -1,11 +1,8 @@
-﻿
+﻿@model IEnumerable<ForRich.Models.DBModels.Profit>
 @{
 
-                ViewBag.Title = "Profits";
-              
+                ViewBag.Title = "Profits";              
 }
-
-
 
 <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">PROFITS</h4>
@@ -18,22 +15,36 @@
 
     <div class="col-md-3 col-md-offset-1">
 
-        @using (Ajax.BeginForm("ProfitsAdd", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
         {
-            <button class="btn btn-lg">SHOW ALL</button>
+            <button class="btn btn-primary btn-lg">SHOW ALL</button>
         }
         <br /><br /><br />
 
-        @Html.ActionLink("DELETE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        @using (Ajax.BeginForm("_AddProfit", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mod", HttpMethod = "Get" }))
+        {
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">ADD</button>
+        }
+        <div id="mod">
+
+        </div>
 
         <br /><br /><br />
 
-        @Html.ActionLink("UPDATE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-primary btn-lg">DELETE</button>
+        }
 
         <br /><br /><br />
 
-        @Html.ActionLink("SHOW ALL ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
 
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-primary btn-lg">UPDATE</button>
+        }
         <br />
         <br />
     </div>

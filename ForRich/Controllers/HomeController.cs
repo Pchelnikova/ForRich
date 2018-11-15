@@ -1,4 +1,5 @@
 ﻿using ForRich.Models;
+using ForRich.Models.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,22 @@ namespace ForRich.Controllers
         {
             return View();
         }
-        public ActionResult ProfitsAdd()
+        [HttpPost]
+        public ActionResult _ShowAll()
         {
-            return PartialView("_Budjet");
+            AppDbContext ctx = new AppDbContext();
+            var data = ctx.Profits.ToList();
+                
+            return PartialView(data);
+        }
+        [HttpGet]
+        public ActionResult _AddProfit()
+        {
+            return PartialView("_modalAddProfit");
+
+            //AppDbContext ctx = new AppDbContext();
+            //var data = ctx.Profits.ToList();
+            //return PartialView(data);
         }
         public ActionResult Expences()
         {
@@ -61,6 +75,7 @@ namespace ForRich.Controllers
             return PartialView();
         }
       
+        [HttpPost]
         public ActionResult _EmailsForGroup(string surname)
         {
             AppDbContext ctx = new AppDbContext();
@@ -73,7 +88,10 @@ namespace ForRich.Controllers
         {
             return View();
         }
+      
+      
 
-       
+
+
     }
 }
