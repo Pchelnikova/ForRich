@@ -14,10 +14,12 @@
                 @using (Html.BeginForm("_AddProfit", "Home", FormMethod.Post))
                 {
                     @Html.LabelFor(m => m.Sum)
+                    <br />
                     @Html.TextBoxFor(m => m.Sum)
                     
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Descriotion</label>
+                        <br />
                         @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
                     </div>
                     <input type="submit" class="btn btn-primary" value="OK">
