@@ -1,5 +1,6 @@
 ﻿using ForRich.Models;
 using ForRich.Models.DBModels;
+using ForRich.Models.DBModels.Types_of_Budjet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,14 +42,33 @@ namespace ForRich.Controllers
                 
             return PartialView(data);
         }
-        [HttpGet]
-        public ActionResult _AddProfit()
+        [HttpPost]
+        public ActionResult _modalAddProfit()
         {
-            return PartialView("_modalAddProfit");
+            return PartialView();
 
             //AppDbContext ctx = new AppDbContext();
             //var data = ctx.Profits.ToList();
             //return PartialView(data);
+        }
+
+        [HttpPost]
+        public ActionResult _AddProfit(Profit model)
+        {
+
+            AppDbContext ctx = new AppDbContext();
+            Profit profit = new Profit()
+            {
+                Sum = model.Sum,
+                Description = model.Description,
+                Profit_Type = new Profit_Type() { Name = "SALARY" },
+                Date_ = DateTime.Now
+            };
+            var data = ctx.Profits;
+            data.Add(profit);
+            ctx.SaveChanges();           
+            return View("Profits");
+
         }
         public ActionResult Expences()
         {

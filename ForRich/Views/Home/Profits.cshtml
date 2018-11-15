@@ -22,7 +22,7 @@
         <br /><br /><br />
 
 
-        @using (Ajax.BeginForm("_AddProfit", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mod", HttpMethod = "Get" }))
+        @using (Ajax.BeginForm("_modalAddProfit", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mod", HttpMethod = "Post" }))
         {
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">ADD</button>
         }
