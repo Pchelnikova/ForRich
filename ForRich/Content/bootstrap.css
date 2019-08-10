@@ -2505,9 +2505,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    color: #fff ;
+    background-color: darkolivegreen;
+    border-color: saddlebrown;
+    width: 150px;
 }
 
     .btn-primary:hover {
@@ -3077,6 +3078,7 @@ fieldset:disabled a.btn {
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: 0.3rem;
+    background-color:darkolivegreen;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -5235,7 +5237,7 @@ input[type="button"].btn-block {
 
 .alert-dark {
     color: #1b1e21;
-    background-color: #d6d8d9;
+    background-color: violet;
     border-color: #c6c8ca;
 }
 
@@ -6319,7 +6321,7 @@ button.bg-success:focus {
 }
 
 .bg-info {
-    background-color: #17a2b8 !important;
+    background-color: saddlebrown !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,

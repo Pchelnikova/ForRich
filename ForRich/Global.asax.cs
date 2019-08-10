@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ForRich.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -11,8 +13,10 @@ namespace ForRich
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+
         protected void Application_Start()
         {
+            Database.SetInitializer<AppDbContext>(new  MyInitializer<AppDbContext>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

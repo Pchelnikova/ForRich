@@ -51,7 +51,7 @@ namespace ForRich.Controllers
                 _userManager = value;
             }
         }
-
+       
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -67,7 +67,7 @@ namespace ForRich.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
-        {
+        {       
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -151,10 +151,11 @@ namespace ForRich.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = model.Login, Email = model.Email };
+                var user = new AppUser { UserName = model.Email, Email = model.Email, Name= model.First_Name };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, "superadmin");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -163,7 +164,7 @@ namespace ForRich.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AfterRegistration", "Home");
                 }
                 AddErrors(result);
             }

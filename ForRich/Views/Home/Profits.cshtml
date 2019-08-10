@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ForRich.Models.DBModels.Profit>
+@{
+
+                ViewBag.Title = "Profits";              
+}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">PROFITS</h4>
+    <p></p>
+    <hr>
+</div>
+<div class="row">
+    <br />
+    <br />
+
+    <div class="col-md-3 col-md-offset-1">
+
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-primary btn-lg">SHOW ALL</button>
+        }
+        <br /><br /><br />
+
+
+        @using (Ajax.BeginForm("_modalAddProfit", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mod", HttpMethod = "Post" }))
+        {
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">ADD</button>
+        }
+        <div id="mod">
+
+        </div>
+
+        <br /><br /><br />
+
+
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-primary btn-lg">DELETE</button>
+        }
+
+        <br /><br /><br />
+
+
+        @using (Ajax.BeginForm("_ShowAll", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "tabledate", HttpMethod = "POST" }))
+        {
+            <button class="btn btn-primary btn-lg">UPDATE</button>
+        }
+        <br />
+        <br />
+    </div>
+    <div class="col-md-8" id="tabledate">
+       
+    </div>
+
+</div>
+

@@ -1,0 +1,21 @@
+﻿<h3>How many members in your group (family)?</h3>
+
+<input type="text" id="member">
+<input value="OK" onclick="members()" type="button" id="mem">
+<hr />
+<form id="email"></form>
+<script>
+    function members() {
+        $("#email").append('<label>Input email for invite members of your group<br/>');
+        if (($("#member").val()) != null) {
+            for (i = 0; i < $("#member").val(); i++) {
+                $("#email").append('<br/><input name="email' + i + '"><br/>');
+            }
+            $("#email").append('<br/>');
+        }
+    }
+</script><br /><br />
+@using (Ajax.BeginForm("_CreateNewGroup", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "CreateOrdinaryUser", HttpMethod = "POST" }))
+{
+    <button class="btn btn-lg">CREATE NEW GROUP!</button>
+}

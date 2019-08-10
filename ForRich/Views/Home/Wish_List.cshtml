@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Wish_List";
+}
+
+<div class="alert alert-dark" role="alert">
+    <h4 class="alert-heading">WISH LIST</h4>
+    <p></p>
+    <hr>
+
+</div>
+<div class="row">
+    <br />
+    <br />
+
+    <div class="col-md-3">
+        @Html.ActionLink("ADD ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("DELETE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("UPDATE ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br /><br /><br />
+
+        @Html.ActionLink("SHOW ALL ", "Profits", "Home", new { area = "", @class = "btn btn-primary btn-lg" })
+
+        <br />
+        <br />
+    </div>
+
+</div>
